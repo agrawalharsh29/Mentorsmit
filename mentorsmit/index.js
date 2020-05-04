@@ -4,8 +4,12 @@ var app     = express();
 app.use(bodyParser.urlencoded({ extended: true })); 
 var http = require('http');
 var mysql = require('mysql');
+var path = require('path');
+var fileUpload = require('express-fileupload');
 var methodOverride = require('method-override');
 app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload());
 
 var con = mysql.createConnection({
   host: "localhost",
@@ -39,7 +43,15 @@ app.post('/login', function(req, res) {
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.put('/t_details',function(req,res){
-  con.query('update final_t_details set name=? ,project=? ,availability=? ,n_interns=? where id=?' ,[req.body.t_name,req.body.t_project,req.body.t_availability,req.body.t_no,req.body.t_id] ,function (error, results, fields) {
+	    var file = req.files.uploaded_image;
+		var img_name=file.name;
+		 file.mv('public/images/upload_images/'+file.name, function(err) {
+                             
+	              if (err)
+ 
+	                return res.status(500).send(err);
+	        });
+  con.query('update final_t_details set name=? ,project=? ,availability=? ,n_interns=? ,img=? where id=?' ,[req.body.t_name,req.body.t_project,req.body.t_availability,req.body.t_no,req.files.uploaded_image.name,req.body.t_id] ,function (error, results, fields) {
     if (error) throw error;
     // res.end(JSON.stringify(results));
     res.render('home');
@@ -52,9 +64,10 @@ app.get('/t1',function(req,res){
               var ab = result[0].name;
               var s = result[0].project;
               var x = result[0].availability;
+              var im = result[0].img;
               console.log(ab);
               console.log(s);
-              res.render('index', {obj: ab,obj1:s,obj2:x});
+              res.render('index', {obj: ab,obj1:s,obj2:x,obj3:im});
   });
 });
 app.get('/t2',function(req,res){

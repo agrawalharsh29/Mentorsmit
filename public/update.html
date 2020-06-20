@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+body{
+	/*background: linear-gradient(to top, #ccffff 100%, #ffffff 50%);*/
+	 background: linear-gradient(to bottom, #000000 0%, #ffffff 132%);
+}
+form{
+	color:white;
+}
+input[type=text] {
+	width: 60%;
+  padding: 3px 5px;
+  margin: 2px 0;
+  box-sizing: border-box;
+}
+</style>
+<body>
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<img src="img/nu.png" width="250px" height="250px" style="margin-top: 150px;margin-left: 150px;">
+		</div>
+		<div class="col-sm-6">
+	<center><h3 style="color: white;margin-top: 10px;">Hi!! Here you can update your details!!</h3></center>
+	<div class="det" style="text-align: center;margin-top: 50px;border-color: red;">
+<form action ="http://localhost:8000/t_details?_method=put" method="post" enctype="multipart/form-data">
+	<b>Enter your ID please - <b><input type="text" name="t_id" ><br><br>
+	Enter your Name - <input type="text" name ="t_name" style="margin-left: 10px;"><br><br>
+	Enter Your Project -<input type ="text" name ="t_project"><br><br>
+	Enter the availability - <input type ="text" name ="t_availability"><br><br>
+	Enter no. of Interns - <input type ="text" name ="t_no"><br><br>
+	Enter your Bio - <textarea name="bio"></textarea> <br><br>
+	<input class="form-control" type="file" name="uploaded_image" style="margin-left: 20px;"accept=""/><br>
+
+	<input type ="submit" value="SAVE CHANGES" style="margin-left: 50px;"><br><br>
+</form><br>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>

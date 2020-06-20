@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Faculty Sign In</title>
+    <style> 
+      input[type=email] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+        background-color: white;
+        <!-- background-image: url('searchicon.png'); -->
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        transition: width 0.4s ease-in-out;
+      }
+      
+      input[type=email]:focus {
+        width: 100%;
+      }
+      input[type=password] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+        background-color: white;
+        <!-- background-image: url('searchicon.png'); -->
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        transition: width 0.4s ease-in-out;
+      }
+      
+      input[type=password]:focus {
+        width: 100%;
+      }
+      </style>
+  </head>
+  <body>
+    <img style="width: 75px; height: 80px;" src="images/nu2.png"></a>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="../index.html">
+          <h1>Hello Students<hr></h1>
+          <!-- <div class="social-container">
+            
+          </div> -->
+          <h3>This place is for faculties to login to their profile. Hence, we should return to home page to search for massive opportunities.</h3><br>
+          <button >Find Internship!</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form action="http://localhost:8000/login" method="post"><br>
+          <h1>Faculty Sign in<hr></h1>
+          <!-- <div class="social-container">
+          </div> -->
+          <span><h5>Enter valid credentials<h5></span><br>
+          <input type="text" placeholder="Userame" name="username"><br>
+          <input type="password" placeholder="Password" name="password">
+          <a href="#"><h5>Forgot your password?<h5></a>
+          <input type ="submit" value="submit">
+
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Hello, Are you a faculty?</h1>
+            <p>You are at right place, Sir. With due respect, MentorSMIT kindly requests you to login to continue.</p>
+            <button class="ghost" id="signIn">Log In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Are you a student?</h1>
+            <p>MentorSMIT is honoured to have you here. But, here we do not offer Sign-In profile feature for students .</p>
+           <a href="../../index.html"> <button class="ghost" id="signUp">Move Ahead</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-social-container">
+        <span>
+          <i class="fas fa-heart"></i>   MentorSMIT <i class="fas fa-heart"></i>  
+        </span>
+        <p>
+          <a href="mailto:mentorsmit@yandex.com?Subject=Hello!" target="_top"><i class="fa fa-envelope"></i></a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
